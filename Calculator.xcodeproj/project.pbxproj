@@ -12,6 +12,7 @@
 		4A7516F12764304F00E90458 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7516F02764304F00E90458 /* ContentView.swift */; };
 		4A7516F32764305200E90458 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7516F22764305200E90458 /* Assets.xcassets */; };
 		4A7516F62764305200E90458 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7516F52764305200E90458 /* Preview Assets.xcassets */; };
+		4AD42B3F2767B14E004516E6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD42B3E2767B14E004516E6 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		4A7516F02764304F00E90458 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4A7516F22764305200E90458 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A7516F52764305200E90458 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4AD42B3E2767B14E004516E6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				4A7516EE2764304F00E90458 /* CalculatorApp.swift */,
 				4A7516F02764304F00E90458 /* ContentView.swift */,
 				4A5DD02C2765A55D0005776F /* CalculatorButton.swift */,
+				4AD42B3E2767B14E004516E6 /* ViewModel.swift */,
 				4A7516F22764305200E90458 /* Assets.xcassets */,
 				4A7516F42764305200E90458 /* Preview Content */,
 			);
@@ -142,6 +145,7 @@
 			files = (
 				4A7516F12764304F00E90458 /* ContentView.swift in Sources */,
 				4A5DD02D2765A55D0005776F /* CalculatorButton.swift in Sources */,
+				4AD42B3F2767B14E004516E6 /* ViewModel.swift in Sources */,
 				4A7516EF2764304F00E90458 /* CalculatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +277,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Calculator/Preview Content\"";
+				DEVELOPMENT_TEAM = YAZRH2W8WY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -301,6 +306,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Calculator/Preview Content\"";
+				DEVELOPMENT_TEAM = YAZRH2W8WY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
