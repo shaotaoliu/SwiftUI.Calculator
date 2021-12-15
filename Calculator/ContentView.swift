@@ -11,14 +11,21 @@ struct ContentView: View {
             let buttonWidth = (UIScreen.main.bounds.width - vm.buttonSpacing * CGFloat(5)) / CGFloat(4)
             
             VStack(alignment: .trailing, spacing: 0) {
-                VStack {
-                    Text(vm.input)
-                        .font(.system(size: vm.inputFontSize))
-                        .foregroundColor(vm.inputColor)
-                        .lineSpacing(10)
-                        .minimumScaleFactor(0.1)
+                ScrollViewReader { reader in
+                    ScrollView {
+                        Text(vm.input)
+                            .font(.system(size: vm.inputFontSize))
+                            .foregroundColor(vm.inputColor)
+                            .lineSpacing(10)
+                            //.minimumScaleFactor(0.1)
+                            .id("textId")
+                            .padding(1)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .onChange(of: vm.input, perform: { _ in
+                        reader.scrollTo("textId", anchor: .bottom)
+                    })
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 
                 HStack {
                     Text(vm.result)
@@ -64,5 +71,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+//            .previewInterfaceOrientation(.landscapeLeft)
     }
 }
