@@ -19,6 +19,7 @@ class ViewModel: ObservableObject {
     
     @Published var inputArray: [String] = []
     @Published var result = "0"
+    @Published var showPicture = false
     private var parenthesis = 0
     private let FAILED = "ERROR!"
     
@@ -228,15 +229,11 @@ class ViewModel: ObservableObject {
                 return
             }
             
-            let last = inputArray.last!
+            var last = inputArray.last!
             
-            if "+–x÷-".contains(last) {
-                inputArray.removeLast()
-                
-                if inputArray.isEmpty {
-                    self.result = "0"
-                    return
-                }
+            if "+–x÷-.".contains(last) {
+                self.result = FAILED
+                return
             }
              
             do {

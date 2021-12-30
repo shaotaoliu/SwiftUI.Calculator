@@ -11,20 +11,38 @@ struct ContentView: View {
             let buttonWidth = (UIScreen.main.bounds.width - vm.buttonSpacing * CGFloat(5)) / CGFloat(4)
             
             VStack(alignment: .trailing, spacing: 0) {
-                ScrollViewReader { reader in
-                    ScrollView {
-                        Text(vm.input)
-                            .font(.system(size: vm.inputFontSize))
-                            .foregroundColor(vm.inputColor)
-                            .lineSpacing(10)
-                            //.minimumScaleFactor(0.1)
-                            .id("textId")
-                            .padding(1)
+                if vm.showPicture {
+                    VStack {
+                        Image("kids")
+                            .resizable()
+                            .scaledToFit()
+                            .cornerRadius(5)
+                            .onTapGesture {
+                                vm.showPicture = false
+                            }
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                    .onChange(of: vm.input, perform: { _ in
-                        reader.scrollTo("textId", anchor: .bottom)
-                    })
+                    .frame(maxWidth: .infinity)
+                }
+                else {
+                    ScrollViewReader { reader in
+                        ScrollView {
+                            Text(vm.input)
+                                .font(.system(size: vm.inputFontSize))
+                                .foregroundColor(vm.inputColor)
+                                .lineSpacing(10)
+                            //.minimumScaleFactor(0.1)
+                                .id("textId")
+                                .padding(1)
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        .contentShape(Rectangle())
+                        .onChange(of: vm.input, perform: { _ in
+                            reader.scrollTo("textId", anchor: .bottom)
+                        })
+                        .onTapGesture(count: 2) {
+                            vm.showPicture = true
+                        }
+                    }
                 }
                 
                 HStack {
